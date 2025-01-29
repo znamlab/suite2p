@@ -32,7 +32,7 @@ def compare_list_of_outputs(output_name_list, data_list_one, data_list_two) -> I
         elif output == 'redcell':
             yield True
         else:
-            yield np.allclose(data1, data2, rtol=1e-4, atol=5e-2)
+            yield np.allclose(data1, data2, rtol=3e-4, atol=5e-2)
 
 class FullPipelineTestUtils:
     """

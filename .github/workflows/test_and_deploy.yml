@@ -22,7 +22,10 @@ jobs:
       fail-fast: false
       matrix:
         platform: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [3.8, 3.9]
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+        exclude:
+          - platform: macos-latest
+            python-version: '3.8' # imagecodecs not compatible with python 3.8 on macos
 
     steps:
       - uses: actions/checkout@v2
